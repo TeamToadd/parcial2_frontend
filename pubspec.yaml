@@ -1,0 +1,22 @@
+name: parcial2_app
+description: "Frontend Parcial2 (Empresa/Cliente)"
+publish_to: 'none'
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.2
+  shared_preferences: ^2.5.3
+  flutter_hooks: ^0.20.5
+  hooks_riverpod: ^2.5.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
