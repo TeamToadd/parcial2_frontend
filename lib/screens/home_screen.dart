@@ -215,8 +215,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ),
                             title: Text(p.name ?? 'Producto ${p.id}'),
                             subtitle: Text(
-                              '\$${(p.price ?? 0).toStringAsFixed(2)}  |  Stock: ${p.stock}',
+                              '\$${(p.price ?? 0).toStringAsFixed(2)}  |  Stock: ${p.stock}\n'
+                              'Empresa: ${_companyNameFor(p.companyUserId)}',
                             ),
+
                             trailing: Wrap(
                               spacing: 8,
                               children: [
