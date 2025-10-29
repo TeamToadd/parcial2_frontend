@@ -73,6 +73,21 @@ class _HomeScreenState extends State<HomeScreen> {
     if (ok == true) _load();
   }
 
+  // devuelve el nombre público de la empresa según su companyUserId
+  String _companyNameFor(int companyUserId) {
+    final match = companies.firstWhere(
+      (c) => c['id'] == companyUserId,
+      orElse: () => <String, dynamic>{},
+    );
+    // backend /api/Products/companies te devuelve algo como:
+    // { "id": 7, "name": "Mi Empresa SRL" }
+    final name = match['name'];
+
+    if (name == null || name.toString().trim().isEmpty) {
+      return 'Empresa $companyUserId';
+    }
+    return name.toString();
+  }
   @override
   Widget build(BuildContext context) {
     final isEmpresa = me?.role == 1;
